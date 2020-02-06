@@ -5,8 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Notes</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="moment.min.js" defer></script>
+  <script src="main.js" defer></script>
 </head>
 <body>
-  
+  <main class="main"> 
+
+  <h1 class="title"> Notes </h1>
+
+  <form id="new-note-form" class="form">
+
+    <label for="note-text"> Create a new note</label>
+    
+    <input type="text" id="note-text" required>
+
+    <div>
+      <button type="submit"> Add note </button>
+    </div>
+
+  </form>
+
+</main>
 </body>
 </html>
