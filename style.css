@@ -26,10 +26,35 @@
 .form input {
     width: 100%;
     height: 2rem;
+
 }
 
 .form button {
     width: 10rem;
     height: 2rem;
     margin-top: .5rem
+}
+
+.li {
+    margin: 1rem;
+    list-style: none;
+    font-size: 20px;
+    /* display: flex; */
+    /* flex-direction: row; */
+}
+
+/* ul {
+    display: flex;
+} */
+
+.delete {
+    height: 1.5rem;
+    width: 5rem;
+    align-self: flex-end;
+    margin-left: 2rem
+}
+
+.edit {
+    height: 1.5rem;
+    width:3rem;
 }
