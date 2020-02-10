@@ -68,20 +68,26 @@ p('#notes').addEventListener('click', event => {
   }
 })
 
-function editPost (note) {
-  return fetch(('http://localhost:3000/notes/') + (event.target.parentElement.dataset.notId), {
-    method: 'PATCH',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ note: noteText, done: false, created: moment().format() })
-  })
-    .then(response => response.json)
-}
+// function editPost (note) {
+//   return fetch(('http://localhost:3000/notes/') + (event.target.parentElement.dataset.notId), {
+//     method: 'PATCH',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify({ note: noteText.contentEditable, done: true, created: moment().format() })
+//   })
+//     .then(response => response.json)
+// }
 
 p('#notes').addEventListener('click', event => {
   if (event.target.matches('.edit')) {
-    print('.edit' + event.target.parentElement.dataset.notId)
-  }
-})
+    print('edit ' + event.target.parentElement.dataset.noteId)
+    return fetch(('http://localhost:3000/notes/') + (event.target.parentElement.dataset.noteId), {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ "body" : "new body text".contentEditable, done: true, created: moment().format() })
+          })
+            .then(response => response.json)
+        }
+    })
 
 // function deleteNote (note) {
 //   return fetch('http://localhost:3000/notes/:id', {
